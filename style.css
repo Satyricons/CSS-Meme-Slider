@@ -1,12 +1,19 @@
 * {
-    margin:0;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: black;
+}
+
+.slider-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
 }
