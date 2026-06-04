@@ -10,26 +10,31 @@
 
 <body>
 
-    <div class="container">
-        <div class="slider">
-            <div class="slide"><img id ="slide1" src="./img/1.jpg" ></div>
-            <div class="slide"><img id ="slide2" src="./img/2.jpg" ></div>
-            <div class="slide"><img id ="slide3" src="./img/3.jpg" ></div>
-            <div class="slide"><img id ="slide4" src="./img/4.jpg" ></div>
-            <div class="slide"><img id ="slide5" src="./img/5.jpg" ></div>                     
+    <div class="slider">
+
+        <input type="radio" name="slider" id="slide1">
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
+        <input type="radio" name="slider" id="slide4">
+        <input type="radio" name="slider" id="slide5">
+
+        <div class="slider__wrapper">
+            <div class="slider_item"><img src="./img/1.jpg"></div>
+            <div class="slider_item"><img src="./img/2.jpg"></div>
+            <div class="slider_item"><img src="./img/3.jpg"></div>
+            <div class="slider_item"><img src="./img/4.jpg"></div>
+            <div class="slider_item"><img src="./img/5.jpg"></div>
         </div>
 
-    </div>
+        <div class="slider__controls">
+            <label for="slide1" class="slider__control"></label>
+            <label for="slide2" class="slider__control"></label>
+            <label for="slide3" class="slider__control"></label>
+            <label for="slide4" class="slider__control"></label>
+            <label for="slide5" class="slider__control"></label>
+        </div>
 
-<nav class="nav">
-<input type="radio" name="slider" value="1" id="r1" >
-<input type="radio" name="slider" value="2" id="r2">
-<input type="radio" name="slider" value="3" id="r3">
-<input type="radio" name="slider" value="4" id="r4">
-</nav>
-
-
-
+    </>
 
 </body>
 

@@ -1,65 +1,85 @@
 /*..глобальный сброс */
 
-* {
-  box-sizing: border-box;
+* {box-sizing: border-box;}
+
+body{
+  background-color: black;
 }
 
-.container{
-  display: flex;
-  overflow: hidden;
-}
-
-/* Контейнер, который держит всё в узде */
 .slider {
-  display: flex;
-  overflow-x: auto; /* Разрешаем скролл по горизонтали */
-  scroll-snap-type: x mandatory; /* Главное заклинание! Жесткая привязка по оси X */
-  gap: 10px; /* Немного воздуха, чтобы слайды не терлись друг о друга */
-  
-  /* Прячем уродливый скроллбар, если эстетика важна */
-  scrollbar-width: none; 
-  
- 
+  width: 100%;
+  max-width: 1200px;
+  /* Ограничим ширину */
+  margin: 0 auto;
+  overflow: hidden;
+  /* Скрываем все, что выходит за границы */
 }
 
-.slider::-webkit-scrollbar {
-  display: none; /* Для браузеров, поклоняющихся WebKit */
+.slider__wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 
-/* Сами слайды */
-.slide {
-  flex: 0 0 100%; /* Каждый слайд занимает всю ширину контейнера */
-  scroll-snap-align: center; /* Слайд всегда будет центрироваться при остановке скролла */
-  
-  /* Просто для красоты, чтобы ты видел результат */
-  /* height: 300px; */
-  background-color: #4a5568;
-  color: white;
+.slider__controls {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-   
-}
-
-.nav {
-  display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   margin: 3rem;
-  
+}
 
+/* Прячем радиокнопки */
+.slider input[type="radio"] {
+   display: none; 
+}
+
+/* Стили для каждого отдельного слайда */
+.slider__item {
+  min-width: 100%;
+  /* Каждый слайд занимает всю ширину контейнера */
+}
+
+.slider__controls {
+    display: flex;
+    gap: 10px; /* Расстояние между точками */
+    
 }
 
 
-input {
-  margin-right: 1rem;
+.slider__control {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: rgba(240, 232, 232, 0.5); 
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
+.slider__controls :hover {
+  background-color: rgb(223, 223, 223); }
 
-input:checked {
-transform: scale(2.0);
+.slider__controls :active {
+  background-color: rgb(255, 255, 255); }
 
-transition: 0.5s;
+/* Если выбрана 1 радиокнопка, сдвигаем контейнер на -100% (показываем второй слайд) */
+#slide1:checked~.slider__wrapper {
+  transform: translateX(0%);
 }
 
+/* Если выбрана 2 радиокнопка, сдвигаем контейнер на -100% (показываем второй слайд) */
+#slide2:checked~.slider__wrapper {
+  transform: translateX(-100%);
+}
 
+/* Если выбрана 3 радиокнопка, сдвигаем контейнер на -100% (показываем второй слайд) */
+#slide3:checked~.slider__wrapper {
+  transform: translateX(-200%);
+}
+
+/* Если выбрана 4 радиокнопка, сдвигаем контейнер на -100% (показываем второй слайд) */
+#slide4:checked~.slider__wrapper {
+  transform: translateX(-300%);
+}
+
+/* Если выбрана 5 радиокнопка, сдвигаем контейнер на -100% (показываем второй слайд) */
+#slide5:checked~.slider__wrapper {
+  transform: translateX(-400%);
+}
