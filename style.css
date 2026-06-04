@@ -3,19 +3,32 @@
 * {box-sizing: border-box;}
 
 body{
-  background-color: black;
+  background-color: rgb(44, 44, 44);
 }
 
-.slider {
-  width: 100%;
-  max-width: 1200px;
+.slider {  
+  max-width: 75rem;
   /* Ограничим ширину */
   margin: 0 auto;
   overflow: hidden;
   /* Скрываем все, что выходит за границы */
+  }
+
+@media screen and (max-width: 75rem) {
+  
+    img {
+  
+  width: 600px;
+  height: 480px;
+
+  }
+  .slider {  
+  max-width: 15rem;}
+  
 }
 
 .slider__wrapper {
+  
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
@@ -23,7 +36,7 @@ body{
 .slider__controls {
   display: flex;
   justify-content: flex-end;
-  margin: 3rem;
+  margin: 1rem;
 }
 
 /* Прячем радиокнопки */
@@ -39,8 +52,7 @@ body{
 
 .slider__controls {
     display: flex;
-    gap: 10px; /* Расстояние между точками */
-    
+    gap: 10px; /* Расстояние между точками */    
 }
 
 
@@ -48,7 +60,7 @@ body{
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
-    background-color: rgba(240, 232, 232, 0.5); 
+    background-color: rgba(34, 120, 219, 0.719); 
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -56,8 +68,11 @@ body{
 .slider__controls :hover {
   background-color: rgb(223, 223, 223); }
 
+
 .slider__controls :active {
-  background-color: rgb(255, 255, 255); }
+  background-color: rgb(255, 86, 86); }
+
+
 
 /* Если выбрана 1 радиокнопка, сдвигаем контейнер на -100% (показываем второй слайд) */
 #slide1:checked~.slider__wrapper {
