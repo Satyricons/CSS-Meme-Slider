@@ -1,19 +1,58 @@
+/*..глобальный сброс */
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
+.container{
+  display: flex;
+  overflow: hidden;
 }
 
-.slider-wrapper {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
+/* Контейнер, который держит всё в узде */
+.slider {
+  display: flex;
+  overflow-x: auto; /* Разрешаем скролл по горизонтали */
+  scroll-snap-type: x mandatory; /* Главное заклинание! Жесткая привязка по оси X */
+  gap: 10px; /* Немного воздуха, чтобы слайды не терлись друг о друга */
+  
+  /* Прячем уродливый скроллбар, если эстетика важна */
+  scrollbar-width: none; 
+  
+ 
 }
+
+.slider::-webkit-scrollbar {
+  display: none; /* Для браузеров, поклоняющихся WebKit */
+}
+
+/* Сами слайды */
+.slide {
+  flex: 0 0 100%; /* Каждый слайд занимает всю ширину контейнера */
+  scroll-snap-align: center; /* Слайд всегда будет центрироваться при остановке скролла */
+  
+  /* Просто для красоты, чтобы ты видел результат */
+  /* height: 300px; */
+  background-color: #4a5568;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+   
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  margin: 3rem;
+
+}
+
+input:checked {
+transform: scale(2.0);
+z-index: 10;
+transition: 0.5s;
+}
+
+
