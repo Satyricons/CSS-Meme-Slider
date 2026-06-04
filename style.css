@@ -46,12 +46,19 @@
   display: flex;
   justify-content: center;
   margin: 3rem;
+  
 
 }
 
+
+input {
+  margin-right: 1rem;
+}
+
+
 input:checked {
 transform: scale(2.0);
-z-index: 10;
+
 transition: 0.5s;
 }
 
