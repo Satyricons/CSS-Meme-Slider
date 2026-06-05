@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Meme Slider</title>
 </head>
+
 <body>
-    
+
+    <div class="slider">
+        <input type="radio" name="slider" id="slide1">
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
+        <input type="radio" name="slider" id="slide4">
+        <input type="radio" name="slider" id="slide5">
+        <div class="slider__wrapper">
+            <div class="slider_item"><img src="./img/1.jpg"><div class="text">Это просто чудо!</div></div>
+            <div class="slider_item"><img src="./img/2.jpg"><div class="text">Сила в пушке!</div></div>
+            <div class="slider_item"><img src="./img/3.jpg"><div class="text">Космический ЯП</div></div>
+            <div class="slider_item"><img src="./img/4.jpg"><div class="text">Невыносимая легкость бытия</div></div>
+            <div class="slider_item"><img src="./img/5.jpg"><div class="text">Патрик знает ответ</div></div>                
+        </div>    
+         <div class="slider__controls">
+            <label for="slide1" class="slider__control1"></label>
+            <label for="slide2" class="slider__control2"></label>
+            <label for="slide3" class="slider__control3"></label>
+            <label for="slide4" class="slider__control4"></label>
+            <label for="slide5" class="slider__control5"></label>
+        </div>  
+
 </body>
+
 </html>
