@@ -7,34 +7,50 @@ body{
 }
 
 .slider {  
-  max-width: 75rem;
-  /* Ограничим ширину */
+/* Ограничим ширину */
+  max-width: 75rem; 
   margin: 0 auto;
   overflow: hidden;
   /* Скрываем все, что выходит за границы */
   }
 
-@media screen and (max-width: 75rem) {
-  
-    img {
-  
-  width: 600px;
-  height: 480px;
-
-  }
-  .slider {  
-  max-width: 15rem;}  
-}
-
-.slider__wrapper {  
+.slider__wrapper {    
   display: flex;
+  flex-direction: row;
   transition: transform 0.5s ease-in-out;
 }
 
-.slider__controls {
-  display: flex;
-  justify-content: flex-end;
-  margin: 1rem;
+
+
+ 
+@media screen and (max-width: 75rem) {
+  
+
+  .slider {  
+  max-width: 40%;
+  max-height: 40%;  
+  margin: 0 auto;
+  overflow: hidden;
+ 
+}  
+/* 
+.slider__item {
+  width: 40%;
+  height: 40%;
+} */
+
+
+} 
+
+
+
+
+
+
+.text{
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  margin-top: 1rem;
 }
 
 /* Прячем радиокнопки */
@@ -42,17 +58,12 @@ body{
    display: none; 
 }
 
-/* Стили для каждого отдельного слайда */
-.slider__item {
-  min-width: 100%;
-  /* Каждый слайд занимает всю ширину контейнера */
-}
-
 .slider__controls {
-    display: flex;
-    gap: 10px; /* Расстояние между точками */    
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem;
+  gap: 10px; /* Расстояние между точками */ 
 }
-
 
 .slider__control1, .slider__control2, .slider__control3, .slider__control4, .slider__control5 {
     width: 1rem;
@@ -97,26 +108,29 @@ body{
   transform: translateX(-400%);
 }
 
- #slide1:checked~.slider_controls > .slider__control1 {
-    background-color: #ff6600;
-    transform: scale(1.8);
+ #slide1:checked~.slider__controls > .slider__control1 {
+    background-color: #ffffff;
+    transform: scale(1.2);     
 }
 
- #slide2:checked~.slider_controls > .slider__control2 {
-    background-color: #ff6600;
-    transform: scale(1.8);
+ #slide2:checked~.slider__controls > .slider__control2 {
+    background-color: #ffffff;
+    transform: scale(1.2);
+    }
+
+ #slide3:checked~.slider__controls > .slider__control3 {
+    background-color: #ffffff;
+    transform: scale(1.2);
 }
 
 
+ #slide4:checked~.slider__controls > .slider__control4 {
+    background-color: #ffffff;
+    transform: scale(1.2);
+}
 
-/* 
- #slide1:cheked~ slider_controls > slider-control1,
- #slide2:cheked~ slider_controls > slider-control2,
- #slide3:cheked~ slider_controls > slider-control3,
- #slide4:cheked~ slider_controls > slider-control4,
- #slide5:cheked~ slider_controls > slider-control5 {
-    background-color: #ff6600;
-    transform: scale(1.8);
-} */
-
+ #slide5:checked~.slider__controls > .slider__control5 {
+    background-color: #ffffff;
+    transform: scale(1.2);
+}
 
