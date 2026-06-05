@@ -23,12 +23,10 @@ body{
 
   }
   .slider {  
-  max-width: 15rem;}
-  
+  max-width: 15rem;}  
 }
 
-.slider__wrapper {
-  
+.slider__wrapper {  
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
@@ -56,7 +54,7 @@ body{
 }
 
 
-.slider__control {
+.slider__control1, .slider__control2, .slider__control3, .slider__control4, .slider__control5 {
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
@@ -98,3 +96,27 @@ body{
 #slide5:checked~.slider__wrapper {
   transform: translateX(-400%);
 }
+
+ #slide1:checked~.slider_controls > .slider__control1 {
+    background-color: #ff6600;
+    transform: scale(1.8);
+}
+
+ #slide2:checked~.slider_controls > .slider__control2 {
+    background-color: #ff6600;
+    transform: scale(1.8);
+}
+
+
+
+/* 
+ #slide1:cheked~ slider_controls > slider-control1,
+ #slide2:cheked~ slider_controls > slider-control2,
+ #slide3:cheked~ slider_controls > slider-control3,
+ #slide4:cheked~ slider_controls > slider-control4,
+ #slide5:cheked~ slider_controls > slider-control5 {
+    background-color: #ff6600;
+    transform: scale(1.8);
+} */
+
+
