@@ -1,0 +1,142 @@
+/*..глобальный сброс */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(44, 44, 44);
+}
+
+
+@media screen and (max-width: 1200px) {
+  .slider {
+    display: flex;
+    /* justify-content: center; */
+    margin: 1rem;
+    gap: 10px;
+    /* transform: scale(0.5) */
+  }
+
+  .slider__wrapper {
+    display: flex;
+    max-width: 40%;
+    max-height: 40%;
+    /* margin: 0 auto;     */
+  }
+
+  .text {
+    display: none
+  }
+}
+
+
+.slider {
+  /* Ограничим ширину */
+  max-width: 75rem;
+  margin: 0 auto;
+  overflow: hidden;
+  /* Скрываем все, что выходит за границы */
+}
+
+.slider__wrapper {
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.5s ease-in-out;
+}
+
+
+.text {
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+/* Прячем радиокнопки */
+.slider input[type="radio"] {
+  display: none;
+}
+
+.slider__controls {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem;
+  gap: 10px;
+  /* Расстояние между точками */
+}
+
+.slider__control1,
+.slider__control2,
+.slider__control3,
+.slider__control4,
+.slider__control5 {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: rgba(34, 120, 219, 0.719);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.slider__controls :hover {
+  background-color: rgb(223, 223, 223);
+}
+
+
+.slider__controls :active {
+  background-color: rgb(255, 86, 86);
+}
+
+
+
+/* Если выбрана 1 радиокнопка, сдвигаем контейнер на -100% (показываем второй слайд) */
+#slide1:checked~.slider__wrapper {
+  transform: translateX(0%);
+
+}
+
+/* Если выбрана 2 радиокнопка, сдвигаем контейнер на -100% (показываем второй слайд) */
+#slide2:checked~.slider__wrapper {
+  transform: translateX(-100%);
+}
+
+/* Если выбрана 3 радиокнопка, сдвигаем контейнер на -100% (показываем второй слайд) */
+#slide3:checked~.slider__wrapper {
+  transform: translateX(-200%);
+}
+
+/* Если выбрана 4 радиокнопка, сдвигаем контейнер на -100% (показываем второй слайд) */
+#slide4:checked~.slider__wrapper {
+  transform: translateX(-300%);
+}
+
+/* Если выбрана 5 радиокнопка, сдвигаем контейнер на -100% (показываем второй слайд) */
+#slide5:checked~.slider__wrapper {
+  transform: translateX(-400%);
+}
+
+#slide1:checked~.slider__controls>.slider__control1 {
+  background-color: #ffffff;
+  transform: scale(1.2);
+}
+
+#slide2:checked~.slider__controls>.slider__control2 {
+  background-color: #ffffff;
+  transform: scale(1.2);
+}
+
+#slide3:checked~.slider__controls>.slider__control3 {
+  background-color: #ffffff;
+  transform: scale(1.2);
+}
+
+
+#slide4:checked~.slider__controls>.slider__control4 {
+  background-color: #ffffff;
+  transform: scale(1.2);
+}
+
+#slide5:checked~.slider__controls>.slider__control5 {
+  background-color: #ffffff;
+  transform: scale(1.2);
+}
